@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="description" content="Web site created using PrabuSelvam --COBRA" />
+  <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+
+  <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+  <title>Responsive Portfolio</title>
+  <link rel="stylesheet" href="./assets/css/styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/boxicons@latest/css/boxicons.min.css" />
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+
+  <script>
+    // SHOW MENU
+
+    const showMenu = (toggleId, navId) => {
+      const toggle = document.getElementById(toggleId),
+        nav = document.getElementById(navId)
+
+      if (toggle && nav) {
+        toggle.addEventListener('click', () => {
+          nav.classList.toggle('show')
+        });
+      }
+    }
+
+    showMenu('nav_toggle', 'nav_menu')
+
+    // ACTIVE & REMOVE ACTIVE
+    const navLink = document.querySelectorAll('.nav_link')
+    navLink.forEach(n => n.classList.remove('active'))
+
+    function linkAction() {
+      navLink.forEach(n => n.classList.remove('active'))
+      this.classList.add('active')
+
+      const navMenu = document.getElementById('nav_menu')
+      navMenu.classList.remove('show')
+    }
+
+    navLink.forEach(n => n.addEventListener('click', linkAction))
+  </script>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script src="./assets/js/main.js"></script>
+
+
+
+</head>
+
+<body>
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <div id="root"></div>
+  <!--
+      This HTML file is a template.
+      If you open it directly in the browser, you will see an empty page.
+
+      You can add webfonts, meta tags, or analytics to this file.
+      The build step will place the bundled scripts into the <body> tag.
+
+      To begin the development, run `npm start` or `yarn start`.
+      To create a production bundle, use `npm run build` or `yarn build`.
+    -->
+</body>
+
+<script>
+  setTimeout(() => {
+    AOS.init({
+    duration: 1200,
+    once: false,
+  });
+  },2000);
+
+</script>
+
+</html>
